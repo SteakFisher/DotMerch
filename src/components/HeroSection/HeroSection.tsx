@@ -1,13 +1,58 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { ProductCarousel } from "../ProductCarousel/ProductCarousel";
 
 export const HeroSection = (): JSX.Element => {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    isExpired: false
+  });
+
+  useEffect(() => {
+    const targetDate = new Date((import.meta as any).env.VITE_COUNTDOWN_END_DATE || '2025-12-25T23:59:59');
+    
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const target = targetDate.getTime();
+      const difference = target - now;
+
+      if (difference > 0) {
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({
+          hours,
+          minutes,
+          seconds,
+          isExpired: false
+        });
+      } else {
+        setTimeLeft({
+          hours: 0,
+          minutes: 0,
+          seconds: 0,
+          isExpired: true
+        });
+      }
+    };
+
+    // Calculate immediately
+    calculateTimeLeft();
+
+    // Update every second
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const countdownItems = [
-    { value: "24", label: "HOURS" },
-    { value: "24", label: "MINUTES" },
-    { value: "24", label: "SECONDS" },
+    { value: String(timeLeft.hours).padStart(2, '0'), label: "HOURS" },
+    { value: String(timeLeft.minutes).padStart(2, '0'), label: "MINUTES" },
+    { value: String(timeLeft.seconds).padStart(2, '0'), label: "SECONDS" },
   ];
 
   return (
@@ -49,9 +94,14 @@ export const HeroSection = (): JSX.Element => {
             {/* CTA Button */}
             <Button 
               size="lg"
-              className="bg-[#e8ff8c] text-black hover:bg-[#d4e619] text-base px-6 py-4 rounded-full font-semibold transition-all duration-200 hover:scale-105"
+              className={`${
+                timeLeft.isExpired 
+                  ? "bg-gray-500 text-white cursor-not-allowed" 
+                  : "bg-[#e8ff8c] text-black hover:bg-[#d4e619]"
+              } text-base px-6 py-4 rounded-full font-semibold transition-all duration-200 hover:scale-105`}
+              disabled={timeLeft.isExpired}
             >
-              BUY NOW!
+              {timeLeft.isExpired ? "SALE ENDED :(" : "BUY NOW!"}
             </Button>
           </div>
 
@@ -101,9 +151,14 @@ export const HeroSection = (): JSX.Element => {
           {/* CTA Button */}
           <Button 
             size="lg"
-            className="bg-[#e8ff8c] text-black hover:bg-[#d4e619] text-lg px-8 py-6 rounded-full font-semibold transition-all duration-200 hover:scale-105"
+            className={`${
+              timeLeft.isExpired 
+                ? "bg-gray-500 text-white cursor-not-allowed" 
+                : "bg-[#e8ff8c] text-black hover:bg-[#d4e619]"
+            } text-lg px-8 py-6 rounded-full font-semibold transition-all duration-200 hover:scale-105`}
+            disabled={timeLeft.isExpired}
           >
-            BUY NOW!
+            {timeLeft.isExpired ? "SALE ENDED :(" : "BUY NOW!"}
           </Button>
         </div>
       </div>
