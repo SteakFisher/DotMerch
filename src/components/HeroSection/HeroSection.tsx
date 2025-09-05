@@ -16,29 +16,15 @@ export const HeroSection = (): JSX.Element => {
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-[1fr_2fr] lg:gap-8 lg:items-center min-h-[600px]">
           {/* Left Column - Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 ml-16">
             {/* Merch Drop Graphic Text */}
             <div className="mb-6">
-              <h1 className="text-5xl lg:text-6xl font-black text-white mb-4">
-                merch
-              </h1>
-              <h2 className="text-5xl lg:text-6xl font-black text-transparent [-webkit-text-stroke:2px_#ffffff]">
-                drop
-              </h2>
+              <img src="/merchdroptext.png" alt="Merch Drop" className="w-48 md:w-64 lg:w-72" />
             </div>
 
             {/* DOT Club Text */}
             <div className="flex items-center space-x-4 mb-6">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#e8ff8c] to-[#a7c430] flex items-center justify-center">
-                  <div className="w-5 h-5 bg-black rounded-full"></div>
-                </div>
-                <div>
-                  <div className="text-xl font-bold text-[#e8ff8c]">DOT</div>
-                  <div className="text-base text-white/60">CLUB</div>
-                </div>
-              </div>
-              <div className="text-xl text-[#e8ff8c] font-bold">#25</div>
+              <img src="/dotclubtext.png" alt="DOT Club Icon" className="w-44 md:w-60 lg:w-68 -mt-8" />
             </div>
 
             {/* Countdown Timer */}
@@ -77,33 +63,20 @@ export const HeroSection = (): JSX.Element => {
 
         {/* Mobile Layout */}
         <div className="lg:hidden text-center space-y-8">
-          {/* Merch Drop Graphic Text */}
-          <div className="mb-8">
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-4">
-              merch
-            </h1>
-            <h2 className="text-5xl md:text-6xl font-black text-transparent [-webkit-text-stroke:2px_#ffffff]">
-              drop
-            </h2>
+
+          {/* DOT Club */}
+          <div className="flex items-center justify-center space-x-4 mb-8">
+            <img src="/dotclubtext.png" alt="DOT Club Icon" className="w-44 -mt-4" />
           </div>
 
           {/* Hero Image */}
           <div className="mb-8">
             <ProductCarousel />
           </div>
-
-          {/* DOT Club */}
-          <div className="flex items-center justify-center space-x-4 mb-8">
-            <div className="flex items-center space-x-2">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#e8ff8c] to-[#a7c430] flex items-center justify-center">
-                <div className="w-6 h-6 bg-black rounded-full"></div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-[#e8ff8c]">DOT</div>
-                <div className="text-lg text-white/60">CLUB</div>
-              </div>
-            </div>
-            <div className="text-2xl text-[#e8ff8c] font-bold">#25</div>
+          
+          {/* Merch Drop Graphic Text */}
+          <div className="mb-8">
+            <img src="/merchdroptext.png" alt="Merch Drop" className="w-48 mx-auto" />
           </div>
 
           {/* Countdown Timer */}

@@ -19,11 +19,11 @@ export const AboutSection = (): JSX.Element => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - DOT Club Logo */}
           <div className="flex justify-center lg:justify-start">
-            <div className="w-80 h-80 rounded-full bg-gradient-to-br from-[#e8ff8c] to-[#a7c430] flex items-center justify-center">
+            <div className="w-80 h-80 rounded-full flex items-center justify-center">
               <img
-                src="/vector.svg"
+                src="/dotlogo.png"
                 alt="DOT Club Logo"
-                className="w-40 h-40 object-contain"
+                className="w-60 lg:ml-44"
               />
             </div>
           </div>

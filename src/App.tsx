@@ -4,7 +4,7 @@ import { HeroSection } from "./components/HeroSection/HeroSection";
 import { SizeChartSection } from "./components/SizeChartSection/SizeChartSection";
 import { FaqSection } from "./components/FaqSection/FaqSection";
 import { AboutSection } from "./components/AboutSection/AboutSection";
-import { Footer } from "./components/Footer/Footer";
+import { ProductSection } from "./components/ProductSection/ProductSection";
 
 export const App = (): JSX.Element => {
   return (
@@ -14,11 +14,11 @@ export const App = (): JSX.Element => {
         <div id="home">
           <HeroSection />
         </div>
+        <ProductSection />
         <SizeChartSection />
         <FaqSection />
         <AboutSection />
       </main>
-      <Footer />
     </div>
   );
 };

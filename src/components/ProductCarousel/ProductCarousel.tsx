@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const products = [
   {
     id: 1,
     title: "Regular Hoodies",
     subtitle: "Regular",
-    image: "/17.png",
+    image: "/regular.jpg",
     bgColor: "bg-[#e8ff8c]",
   },
   {
     id: 2,
     title: "Oversized T-Shirts",
     subtitle: "Oversized",
-    image: "/18.png",
-    bgColor: "bg-gradient-to-br from-purple-600 to-blue-600",
+    image: "/oversized.jpg",
+    bgColor: "bg-[#e8ff8c]",
   },
   {
     id: 3,
     title: "Cropped Hoodies",
     subtitle: "Cropped",
-    image: "/17-1.png",
+    image: "/cropped.jpg",
     bgColor: "bg-[#e8ff8c]",
   },
 ];
@@ -90,7 +90,7 @@ export const ProductCarousel = (): JSX.Element => {
         return (
           <motion.div
             key={product.id}
-            className={`absolute w-80 h-80 rounded-2xl ${product.bgColor} cursor-pointer`}
+            className="absolute cursor-pointer"
             animate={styles}
             transition={{
               duration: 0.6,
@@ -98,31 +98,45 @@ export const ProductCarousel = (): JSX.Element => {
             }}
             onClick={() => setCurrentIndex(index)}
           >
-            <div className="h-full flex flex-col items-center justify-center p-6 relative overflow-hidden">
+            {/* Text with creative curved border background */}
+            <div className="-mb-2 text-center w-fit relative justify-center mx-auto">
+              {/* Curved border background that goes behind the card */}
+              <div className="absolute inset-0 -inset-x-8 -bottom-8">
+                <div className="w-full h-full border-[0.3px] border-[#b2a046] rounded-t-2xl bg-black/10"
+                     style={{
+                       borderBottomLeftRadius: '0',
+                       borderBottomRightRadius: '0',
+                       borderBottom: 'none'
+                     }}>
+                </div>
+              </div>
+              
+              {/* Text content */}
+              <div className="relative z-10 px-6 py-4">
+                <div className="text-xl font-bold text-white drop-shadow-lg pb-2">
+                  {product.title}
+                </div>
+              </div>
+            </div>
+
+            {/* Card Image */}
+            <div className={`w-80 h-80 rounded-2xl ${product.bgColor} overflow-hidden`}>
               <motion.img
                 src={product.image}
                 alt={product.title}
-                className="w-32 h-48 object-cover mb-4"
+                className="w-full h-full object-cover rounded-2xl"
                 animate={{
                   scale: position === "center" ? 1.1 : 1,
                 }}
                 transition={{ duration: 0.6 }}
               />
-              <div className="text-center text-white">
-                <div className="text-lg font-light italic mb-2">
-                  {product.subtitle}
-                </div>
-                <div className="text-xl font-bold">
-                  {product.title}
-                </div>
-              </div>
             </div>
           </motion.div>
         );
       })}
 
       {/* Indicators */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {products.map((_, index) => (
           <button
             key={index}
@@ -132,7 +146,7 @@ export const ProductCarousel = (): JSX.Element => {
             onClick={() => setCurrentIndex(index)}
           />
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
