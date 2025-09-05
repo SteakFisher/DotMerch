@@ -82,7 +82,7 @@ export const ProductCarousel = (): JSX.Element => {
   };
 
   return (
-    <div className="relative h-96 flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-96 flex items-center justify-center overflow-hidden">
       {products.map((product, index) => {
         const position = getItemPosition(index);
         const styles = getItemStyles(position);

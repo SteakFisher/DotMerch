@@ -1,7 +1,6 @@
 import React from "react";
 import { Header } from "./components/Header/Header";
 import { HeroSection } from "./components/HeroSection/HeroSection";
-import { ProductSection } from "./components/ProductSection/ProductSection";
 import { SizeChartSection } from "./components/SizeChartSection/SizeChartSection";
 import { FaqSection } from "./components/FaqSection/FaqSection";
 import { AboutSection } from "./components/AboutSection/AboutSection";
@@ -15,7 +14,6 @@ export const App = (): JSX.Element => {
         <div id="home">
           <HeroSection />
         </div>
-        <ProductSection />
         <SizeChartSection />
         <FaqSection />
         <AboutSection />
