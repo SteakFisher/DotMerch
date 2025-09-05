@@ -14,7 +14,7 @@ export const HeroSection = (): JSX.Element => {
     <section className="pt-24 pb-16 px-4 lg:px-8">
       <div className="container mx-auto">
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center">
+        <div className="hidden lg:grid lg:grid-cols-2 lg:gap-12 lg:items-center min-h-[600px]">
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* Merch Drop Graphic Text */}
@@ -69,8 +69,8 @@ export const HeroSection = (): JSX.Element => {
             </Button>
           </div>
 
-          {/* Right Column - Hero Image */}
-          <div className="flex justify-center">
+          {/* Right Column - Product Carousel */}
+          <div className="flex justify-center items-center h-full">
             <ProductCarousel />
           </div>
         </div>
