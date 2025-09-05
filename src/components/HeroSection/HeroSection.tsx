@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
+import { ProductCarousel } from "../ProductCarousel/ProductCarousel";
 
 export const HeroSection = (): JSX.Element => {
   const countdownItems = [
@@ -70,11 +71,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Right Column - Hero Image */}
           <div className="flex justify-center">
-            <img
-              src="/untitled-design--1--1.png"
-              alt="Merch Collection"
-              className="w-full max-w-lg h-auto object-contain"
-            />
+            <ProductCarousel />
           </div>
         </div>
 
@@ -92,11 +89,7 @@ export const HeroSection = (): JSX.Element => {
 
           {/* Hero Image */}
           <div className="mb-8">
-            <img
-              src="/untitled-design--1--1.png"
-              alt="Merch Collection"
-              className="w-full max-w-md mx-auto h-auto object-contain"
-            />
+            <ProductCarousel />
           </div>
 
           {/* DOT Club */}
