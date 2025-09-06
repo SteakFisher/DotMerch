@@ -102,7 +102,7 @@ export const ProductCarousel = (): JSX.Element => {
             <div className="-mb-2 text-center w-fit relative justify-center mx-auto">
               {/* Curved border background that goes behind the card */}
               <div className="absolute inset-0 -inset-x-8 -bottom-8">
-                <div className="w-full h-full border-[0.3px] border-[#b2a046] rounded-t-2xl bg-black/10"
+                <div className="w-full h-full border-[0.3px] border-[#e8ff8c] rounded-t-2xl bg-black/10"
                      style={{
                        borderBottomLeftRadius: '0',
                        borderBottomRightRadius: '0',
