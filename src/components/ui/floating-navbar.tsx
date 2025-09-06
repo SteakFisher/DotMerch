@@ -6,6 +6,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "../../lib/utils";
+import { useSmoothScroll } from "../../hooks/useSmoothScroll";
 
 export const FloatingNav = ({
   navItems,
@@ -20,6 +21,7 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
+  const { scrollToElement } = useSmoothScroll();
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
@@ -65,18 +67,21 @@ export const FloatingNav = ({
 
         {/* Navigation Items */}
         {navItems.map((navItem: any, idx: number) => (
-          <a
+          <button
             key={`link-${idx}`}
-            href={navItem.link}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToElement(navItem.link);
+            }}
             className={cn(
-              "relative text-white/80 items-center flex space-x-1 hover:text-[#e8ff8c] transition-colors duration-200"
+              "relative text-white/80 items-center flex space-x-1 hover:text-[#e8ff8c] transition-colors duration-200 cursor-pointer"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block text-sm font-medium">
               {navItem.name}
             </span>
-          </a>
+          </button>
         ))}
 
         {/* CTA Button */}
