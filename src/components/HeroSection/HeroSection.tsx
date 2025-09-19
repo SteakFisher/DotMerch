@@ -13,7 +13,7 @@ export const HeroSection = (): JSX.Element => {
   });
 
   const startDate = new Date(
-    (import.meta as any).env.VITE_COUNTDOWN_START_DATE || "2025-09-19T20:00:00"
+    (import.meta as any).env.VITE_COUNTDOWN_START_DATE || "2025-09-19T22:00:00"
   );
   const targetDate = new Date(
     (import.meta as any).env.VITE_COUNTDOWN_END_DATE || "2025-09-20T23:59:59"
