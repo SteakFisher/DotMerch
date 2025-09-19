@@ -160,7 +160,9 @@ export const HeroSection = (): JSX.Element => {
               className={`${buttonConfig.className} text-base px-6 py-4 rounded-full font-semibold transition-all duration-200 hover:scale-105`}
               disabled={buttonConfig.disabled}
             >
-              {buttonConfig.text}
+              <a href="https://forms.gle/rHNTeGjGH7JQMm5a9" target="_blank">
+                {buttonConfig.text}
+              </a>
             </Button>
           </div>
 

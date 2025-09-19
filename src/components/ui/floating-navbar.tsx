@@ -83,12 +83,6 @@ export const FloatingNav = ({
             </span>
           </button>
         ))}
-
-        {/* CTA Button */}
-        <button className="bg-[#e8ff8c] text-black px-4 py-2 rounded-full text-sm font-semibold hover:bg-[#d4e619] transition-colors duration-200 ml-4">
-          <span className="hidden lg:flex">Buy Now</span>
-          <span className="block lg:hidden">Buy</span>
-        </button>
       </motion.div>
     </AnimatePresence>
   );
