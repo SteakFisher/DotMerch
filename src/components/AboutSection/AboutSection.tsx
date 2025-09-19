@@ -43,7 +43,7 @@ export const AboutSection = (): JSX.Element => {
               </h2>
               <div className="flex items-center justify-between text-xl text-white/80">
                 <span>@IIITV</span>
-                <span>#25</span>
+                <span>'25</span>
               </div>
             </div>
 

@@ -50,7 +50,7 @@ export const ProductSection = (): JSX.Element => {
             <div className="aspect-square"></div>
             <div className="aspect-square overflow-hidden rounded-lg group cursor-pointer">
               <img
-                src="/4.png"
+                src="/rep4.jpeg"
                 alt="Gallery 4"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
@@ -58,7 +58,7 @@ export const ProductSection = (): JSX.Element => {
             <div className="aspect-square"></div>
             <div className="aspect-square overflow-hidden rounded-lg group cursor-pointer">
               <img
-                src="/9.png"
+                src="/rep3.png"
                 alt="Gallery 5"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
@@ -86,7 +86,7 @@ export const ProductSection = (): JSX.Element => {
             <div className="aspect-square"></div>
             <div className="aspect-square overflow-hidden rounded-lg group cursor-pointer">
               <img
-                src="/7.png"
+                src="/rep2.png"
                 alt="Gallery 8"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               />
