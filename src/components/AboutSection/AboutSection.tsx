@@ -11,6 +11,10 @@ export const AboutSection = (): JSX.Element => {
       title: "Joint Secretary",
       name: "Ojas Dhargave",
     },
+    {
+      title: "Designer",
+      name: "Harshad Pathak",
+    },
   ];
 
   return (

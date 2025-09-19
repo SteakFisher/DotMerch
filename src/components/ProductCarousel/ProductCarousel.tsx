@@ -23,6 +23,27 @@ const products = [
     image: "/cropped.jpg",
     bgColor: "bg-[#e8ff8c]",
   },
+  {
+    id: 4,
+    title: "Regular Hoodies",
+    subtitle: "Regular",
+    image: "/back-2.jpeg",
+    bgColor: "bg-[#e8ff8c]",
+  },
+  {
+    id: 5,
+    title: "Oversized T-Shirts",
+    subtitle: "Oversized",
+    image: "/back-1.jpeg",
+    bgColor: "bg-[#e8ff8c]",
+  },
+  {
+    id: 6,
+    title: "Cropped Hoodies",
+    subtitle: "Cropped",
+    image: "/back-3.jpeg",
+    bgColor: "bg-[#e8ff8c]",
+  },
 ];
 
 export const ProductCarousel = (): JSX.Element => {

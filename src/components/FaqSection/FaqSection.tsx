@@ -16,13 +16,13 @@ const faqData = [
   {
     id: "item-2",
     question: "What payment methods are accepted?",
-    answer: "UPI, bank transfer, and cash are accepted.",
+    answer: "UPI.",
   },
   {
     id: "item-3",
     question: "Can I cancel or change my order?",
     answer:
-      "Orders can be canceled or modified only before payment confirmation. After that, changes are not possible.",
+      "Orders can be canceled or modified only before the form is shut. After that, changes are not possible.",
   },
   {
     id: "item-4",
@@ -43,12 +43,6 @@ const faqData = [
   },
   {
     id: "item-7",
-    question: "How do I know my order is confirmed?",
-    answer:
-      "You'll receive a confirmation message or email after completing the payment.",
-  },
-  {
-    id: "item-8",
     question: "Who do I contact for queries?",
     answer:
       "Reach out to the merchandise team through the official email, WhatsApp group, or contact person shared.",
