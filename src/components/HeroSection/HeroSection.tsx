@@ -224,10 +224,11 @@ export const HeroSection = (): JSX.Element => {
             size="lg"
             className={`${buttonConfig.className} text-lg px-8 py-6 rounded-full font-semibold transition-all duration-200 hover:scale-105`}
             disabled={buttonConfig.disabled}
+            onClick={() => { if (!buttonConfig.disabled) {
+              window.open("https://forms.gle/rHNTeGjGH7JQMm5a9", "_blank");
+            }}}
           >
-            <a href="https://forms.gle/rHNTeGjGH7JQMm5a9" target="_blank">
-                {buttonConfig.text}
-            </a>
+            {buttonConfig.text}
           </Button>
         </div>
       </div>
